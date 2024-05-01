@@ -1030,19 +1030,20 @@ testing = ["pytest"]
 
 [[package]]
 name = "google-generativeai"
-version = "0.3.2"
+version = "0.4.1"
 description = "Google Generative AI High level API client library and tools."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "google_generativeai-0.3.2-py3-none-any.whl", hash = "sha256:8761147e6e167141932dc14a7b7af08f2310dd56668a78d206c19bb8bd85bcd7"},
+    {file = "google_generativeai-0.4.1-py3-none-any.whl", hash = "sha256:89be3c00c2e688108fccefc50f47f45fc9d37ecd53c1ade9d86b5d982919c24a"},
 ]
 
 [package.dependencies]
 google-ai-generativelanguage = "0.4.0"
 google-api-core = "*"
-google-auth = "*"
+google-auth = ">=2.15.0"
 protobuf = "*"
+pydantic = "*"
 tqdm = "*"
 typing-extensions = "*"
 
@@ -1883,13 +1884,13 @@ files = [
 
 [[package]]
 name = "openai"
-version = "1.14.0"
+version = "1.20.0"
 description = "The official Python library for the openai API"
 optional = false
 python-versions = ">=3.7.1"
 files = [
-    {file = "openai-1.14.0-py3-none-any.whl", hash = "sha256:5c9fd3a59f5cbdb4020733ddf79a22f6b7a36d561968cb3f3dd255cdd263d9fe"},
-    {file = "openai-1.14.0.tar.gz", hash = "sha256:e287057adf0ec3315abc32ddcc968d095879abd9b68bf51c0402dab13ab5ae9b"},
+    {file = "openai-1.20.0-py3-none-any.whl", hash = "sha256:9fcc75256b2425393800e358cd520b02b5ab1a8731921e45aa7ae6aec3ee8187"},
+    {file = "openai-1.20.0.tar.gz", hash = "sha256:d7c0e824b7da3c043731943965c737595cf9631c913b7a1464c502fdf492b9a9"},
 ]
 
 [package.dependencies]
@@ -2747,21 +2748,21 @@ full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7
 
 [[package]]
 name = "streaming-assistants"
-version = "0.15.7"
+version = "0.16.0"
 description = "Streaming enabled Assistants API"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "streaming_assistants-0.15.7-py3-none-any.whl", hash = "sha256:dccd6e4646788ddc63a0fe4758a1efb3b965bbb790f9db4fe8b4c5a13902942c"},
-    {file = "streaming_assistants-0.15.7.tar.gz", hash = "sha256:5bd6ed6a2af40abda4b6dec95ad1a6fc4d5c22579aae6a9ec9a6800a7a50a7af"},
+    {file = "streaming_assistants-0.16.0-py3-none-any.whl", hash = "sha256:a107400ce685eee4e48a90c8858526e5824024990d27866b4dfc550bd09d39e1"},
+    {file = "streaming_assistants-0.16.0.tar.gz", hash = "sha256:927949b6b78adb66c32fb730d053aaad81ca72ac404cf1d302131567ce9df26b"},
 ]
 
 [package.dependencies]
 boto3 = ">=1.34.31,<2.0.0"
-google-generativeai = ">=0.3.2,<0.4.0"
+google-generativeai = ">=0.4.1,<0.5.0"
 httpx = ">=0.26.0,<0.27.0"
 litellm = ">=1.34.18,<2.0.0"
-openai = ">=1.14.0,<2.0.0"
+openai = ">=1.14.0,<1.21.0"
 
 [[package]]
 name = "tenacity"
@@ -3564,4 +3565,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10.12,<3.12"
-content-hash = "107ec855247ad2f66810945319c1eae27c70386444c0f33d17efba27b00bda66"
+content-hash = "c6fcbcb8489fbabe2e954419cdb771c53da48e86f40e2780fcf70e394eaefb21"
