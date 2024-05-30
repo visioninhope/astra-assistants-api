@@ -113,7 +113,7 @@ jobs:
         run: |
           poetry run pytest -s --disable-warnings tests/openai-sdk/test_files.py
 
-  run-openai-sdk-test_assistans_v1:
+  run-openai-sdk-test_assistants_v1:
     runs-on: ubuntu-latest
     name: run openai-sdk test assistants_v1
     env:
@@ -148,12 +148,12 @@ jobs:
           poetry install
       - name: Install dependencies with specific client version
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0
       - name: run tests
         run: |
           poetry run pytest -s --disable-warnings tests/openai-sdk/test_assistants_v1.py
 
-  run-openai-sdk-test_assistans_v2:
+  run-openai-sdk-test_assistants_v2:
     runs-on: ubuntu-latest
     name: run openai-sdk test assistants_v2
     env:
@@ -299,9 +299,9 @@ jobs:
       - name: run tests
         run: |
           poetry run pytest -s --disable-warnings tests/astra-assistants/test_file_embedding.py
-  run-astra-assistants-tests-function-calling_v1:
+  run-streaming-assistants-tests-function-calling_v1:
     runs-on: ubuntu-latest
-    name: run astra-assistants v1 function calling tests
+    name: run streaming-assistants v1 function calling tests
     env:
         ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -334,13 +334,13 @@ jobs:
           poetry install
       - name: Install openai dependency
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0 streaming-assistants@0.15.9
       - name: run tests
         run: |
           poetry run pytest -s --disable-warnings tests/astra-assistants/test_function_calling_v1.py
-  run-astra-assistants-tests-run_v1:
+  run-streaming-assistants-tests-run_v1:
     runs-on: ubuntu-latest
-    name: run astra-assistants v1 run tests
+    name: run streaming-assistants v1 run tests
     env:
         ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -373,13 +373,13 @@ jobs:
           poetry install
       - name: Install openai dependency
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0 streaming-assistants@0.15.9
       - name: run tests
         run: |
-          poetry run pytest -s --disable-warnings tests/astra-assistants/test_run_v1.py
-  run-astra-assistants-tests-run-retrieval_v1:
+          poetry run pytest -s --disable-warnings tests/streaming-assistants/test_run_v1.py
+  run-streaming-assistants-tests-run-retrieval_v1:
     runs-on: ubuntu-latest
-    name: run astra-assistants run retrieval v1 tests
+    name: run streaming-assistants run retrieval v1 tests
     env:
         ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -412,13 +412,13 @@ jobs:
           poetry install
       - name: Install openai dependency
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0 streaming-assistants@0.15.9
       - name: run tests
         run: |
-          poetry run pytest -s --disable-warnings tests/astra-assistants/test_run_retreival_v1.py
-  run-astra-assistants-tests-streaming-run-retrieval_v1:
+          poetry run pytest -s --disable-warnings tests/streaming-assistants/test_run_retreival_v1.py
+  run-streaming-assistants-tests-streaming-run-retrieval_v1:
     runs-on: ubuntu-latest
-    name: run astra-assistants v1 streaming run retrieval tests
+    name: run streaming-assistants v1 streaming run retrieval tests
     env:
         ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -451,13 +451,13 @@ jobs:
           poetry install
       - name: Install openai dependency
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0 streaming-assistants@0.15.9
       - name: run tests
         run: |
-          poetry run pytest -s --disable-warnings tests/astra-assistants/test_streaming_run_retrieval_v1.py
-  run-astra-assistants-tests-streaming-run_v1:
+          poetry run pytest -s --disable-warnings tests/streaming-assistants/test_streaming_run_retrieval_v1.py
+  run-streaming-assistants-tests-streaming-run_v1:
     runs-on: ubuntu-latest
-    name: run astra-assistants v1 streaming run tests
+    name: run streaming-assistants v1 streaming run tests
     env:
         ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -490,13 +490,13 @@ jobs:
           poetry install
       - name: Install openai dependency
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0 streaming-assistants@0.15.9
       - name: run tests
         run: |
-          poetry run pytest -s --disable-warnings tests/astra-assistants/test_streaming_run_v1.py
-  run-astra-assistants-tests-streaming-run-function-calling_v1:
+          poetry run pytest -s --disable-warnings tests/streaming-assistants/test_streaming_run_v1.py
+  run-streaming-assistants-tests-streaming-run-function-calling_v1:
     runs-on: ubuntu-latest
-    name: run astra-assistants v1 streaming run function calling tests
+    name: run streaming-assistants v1 streaming run function calling tests
     env:
         ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -529,13 +529,13 @@ jobs:
           poetry install
       - name: Install openai dependency
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0 streaming-assistants@0.15.9
       - name: run tests
         run: |
-          poetry run pytest -s --disable-warnings tests/astra-assistants/test_streaming_run_function_calling_v1.py
-  run-astra-assistants-tests-threads-v1:
+          poetry run pytest -s --disable-warnings tests/streaming-assistants/test_streaming_run_function_calling_v1.py
+  run-streaming-assistants-tests-threads-v1:
     runs-on: ubuntu-latest
-    name: run astra-assistants v1 threads tests
+    name: run streaming-assistants v1 threads tests
     env:
       ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -569,13 +569,13 @@ jobs:
           poetry install
       - name: Install openai dependency
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0 streaming-assistants@0.15.9
       - name: run tests
         run: |
-          poetry run pytest -s --disable-warnings tests/astra-assistants/test_threads_v1.py
-  run-astra-assistants-tests-auto-tool-call-v1:
+          poetry run pytest -s --disable-warnings tests/streaming-assistants/test_threads_v1.py
+  run-streaming-assistants-tests-auto-tool-call-v1:
     runs-on: ubuntu-latest
-    name: run astra-assistants v1 test auto tool_call
+    name: run streaming-assistants v1 test auto tool_call
     env:
       ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -609,10 +609,10 @@ jobs:
           poetry install
       - name: Install openai dependency
         run: |
-          poetry add openai@1.20.0 astra-assistants@0.15.9
+          poetry add openai@1.20.0 streaming-assistants@0.15.9
       - name: run tests
         run: |
-          poetry run pytest -s --disable-warnings tests/astra-assistants/test_auto_tool_call_v1.py
+          poetry run pytest -s --disable-warnings tests/streaming-assistants/test_auto_tool_call_v1.py
   run-astra-assistants-tests-run_v2:
     runs-on: ubuntu-latest
     name: run astra-assistants v2 run tests
