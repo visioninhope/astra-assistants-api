@@ -9,7 +9,7 @@ import requests
 import uvicorn
 from dotenv import load_dotenv
 from openai import OpenAI
-from astra_assistants import patch
+from streaming_assistants import patch
 
 from impl.main import app
 
@@ -88,7 +88,7 @@ def start_application():
 
 
 @pytest.fixture(scope="function")
-def patched_openai_client(start_application) -> OpenAI:
+def streaming_assistants_openai_client(start_application) -> OpenAI:
     oai = patch(OpenAI())
     #oai = OpenAI()
     return oai
