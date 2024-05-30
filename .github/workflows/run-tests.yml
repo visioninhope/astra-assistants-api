@@ -337,7 +337,7 @@ jobs:
           poetry add openai@1.20.0 streaming-assistants@0.15.10
       - name: run tests
         run: |
-          poetry run pytest -s --disable-warnings tests/astra-assistants/test_function_calling_v1.py
+          poetry run pytest -s --disable-warnings tests/streaming-assistants/test_function_calling_v1.py
   run-streaming-assistants-tests-run_v1:
     runs-on: ubuntu-latest
     name: run streaming-assistants v1 run tests
